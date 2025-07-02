@@ -1,0 +1,1170 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Professional Portfolio - Sachin Thakur</title>
+
+    <!-- bootstrap css cdn link  -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+      crossorigin="anonymous"
+    />
+
+    <!-- custom css file -->
+    <link rel="stylesheet" href="./style.cs" />
+
+    <!-- google font link -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- bootstrap icon cdn link  -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css"
+    />
+
+    <!-- for adding animation to website we have use AOS library 
+    AOS Library css file cdn link -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+    <!-- jquery cdn link  -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    
+    <style>
+      /* Custom colors */
+      :root {
+        --primary-color: #3f396d;
+        --secondary-color: #ff5d00;
+        --light-bg: #eefcf6;
+        --dark-bg: #3f396d;
+      }
+      
+      /* Prevent horizontal scrolling */
+      html, body {
+        max-width: 100%;
+        overflow-x: hidden;
+      }
+      
+      body {
+        font-family: 'Josefin Sans', sans-serif;
+        color: #333;
+        overflow-x: hidden;
+      }
+      
+      .c-orange {
+        color: var(--secondary-color);
+      }
+      
+      .bg-primary-custom {
+        background-color: var(--primary-color);
+      }
+      
+      .bg-secondary-custom {
+        background-color: var(--secondary-color);
+      }
+      
+      .c-btn {
+        background-color: var(--secondary-color);
+        color: white;
+        border: none;
+        font-weight: 600;
+        transition: all 0.3s ease;
+      }
+      
+      .c-btn:hover {
+        background-color: var(--primary-color);
+        color: white;
+      }
+      
+      .service-card {
+        background: white;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        transition: transform 0.3s ease;
+        height: 100%;
+      }
+      
+      .service-card:hover {
+        transform: translateY(-10px);
+      }
+      
+      .link {
+        color: var(--secondary-color);
+        text-decoration: none;
+        font-weight: 600;
+      }
+      
+      .link:hover {
+        color: var(--primary-color);
+      }
+      
+      .circular-progress {
+        position: relative;
+        height: 120px;
+        width: 120px;
+        border-radius: 50%;
+        background: conic-gradient(var(--secondary-color) 0deg, #ededed 0deg);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      
+      .circular-progress::before {
+        content: "";
+        position: absolute;
+        height: 100px;
+        width: 100px;
+        border-radius: 50%;
+        background-color: white;
+      }
+      
+      .progress-value {
+        position: relative;
+        font-size: 24px;
+        font-weight: 600;
+        color: var(--secondary-color);
+      }
+      
+      .progress-card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      
+      .progress-card .text {
+        font-weight: 600;
+        color: var(--primary-color);
+      }
+      
+      .card {
+        border: none;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        transition: transform 0.3s ease;
+      }
+      
+      .card:hover {
+        transform: translateY(-5px);
+      }
+      
+      .badge {
+        font-weight: 500;
+        padding: 5px 10px;
+        margin: 2px;
+      }
+      
+      .nextprev-btn {
+        border: none;
+        background: var(--secondary-color);
+        color: white;
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      
+      #btn-back-to-top {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background-color: var(--secondary-color);
+        color: white;
+        border: none;
+        width: 50px;
+        height: 50px;
+        display: none;
+      }
+      
+      footer {
+        background-color: var(--primary-color);
+      }
+      
+      .dribble {
+        background-color: #ea4c89;
+        color: white;
+        border: none;
+        width: 40px;
+        height: 40px;
+      }
+      
+      .whatsapp {
+        background-color: #25D366;
+        color: white;
+        border: none;
+        width: 40px;
+        height: 40px;
+        margin: 0 10px;
+      }
+      
+      .behance {
+        background-color: #053eff;
+        color: white;
+        border: none;
+        width: 40px;
+        height: 40px;
+      }
+      
+      .btn-c {
+        position: absolute;
+        right: 10px;
+        top: 10px;
+        background: none;
+        border: none;
+        font-size: 24px;
+        color: var(--secondary-color);
+      }
+      
+      .nav-menu {
+        background: none;
+        border: none;
+        font-size: 24px;
+        color: var(--primary-color);
+      }
+      
+      .navbar-brand {
+        color: var(--primary-color) !important;
+      }
+      
+      .nav-link {
+        color: var(--primary-color);
+        font-weight: 500;
+      }
+      
+      .nav-link:hover {
+        color: var(--secondary-color);
+      }
+      
+      .heading small {
+        color: var(--secondary-color);
+        font-weight: 600;
+        letter-spacing: 1px;
+      }
+      
+      .heading h3 {
+        color: var(--primary-color);
+        font-weight: 700;
+      }
+      
+      /* Responsive adjustments */
+      @media (max-width: 768px) {
+        .circular-progress {
+          height: 100px;
+          width: 100px;
+        }
+        
+        .circular-progress::before {
+          height: 80px;
+          width: 80px;
+        }
+        
+        .progress-value {
+          font-size: 20px;
+        }
+        
+        /* Button responsiveness */
+        .h-btn {
+          padding: 0.75rem 1rem !important;
+          font-size: 0.9rem;
+        }
+        
+        .d-flex.justify-content-center.gap-3 {
+          flex-wrap: wrap;
+          gap: 0.5rem !important;
+        }
+        
+        .c-btn {
+          white-space: nowrap;
+        }
+        
+        /* Ensure all containers don't exceed viewport */
+        .container, .container-fluid {
+          padding-right: 15px;
+          padding-left: 15px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- navbar starts -->
+    <nav
+      id="navbar-top"
+      class="navbar navbar-expand-lg navbar-light bg-white sticky-top"
+    >
+      <div class="container-fluid px-3 px-md-5">
+        <a class="navbar-brand fw-bold fs-2" href="#">SACHIN THAKUR</a>
+        <button 
+        class="nav-menu d-md-none"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <i class="bi bi-menu-button-fill"></i>
+        </button>
+        <div
+          class="collapse navbar-collapse justify-content-center"
+          id="navbarNav"
+        >
+          <ul class="navbar-nav gap-4" style="font-size: 1.1rem">
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="#home">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#service">Expertise</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#about">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#portfolio">Projects</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#testimonial">Testimonials</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#blog">Reflections</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#contact">Contact</a>
+            </li>
+          </ul>
+        </div>
+        <button class="c-btn ms-4 py-2 px-4 rounded-pill d-none d-md-block">
+          <a href="#contact" style="text-decoration: none; color: white;">Contact</a>
+        </button>
+      </div>
+    </nav>
+    <!-- navbar ends here -->
+
+    <!-- home section starts  -->
+    <section class="home pt-5 pb-5" id="home">
+      <div class="row justify-content-evenly align-items-center">
+        <div class="col-10 col-md-6 text-center" data-aos="slide-right">
+          <h2 style="color: #ff5d00">
+            Hello! I Am <br><span class="c-orange">SACHIN THAKUR</span>
+          </h2>
+          <p class="text-muted">
+            Masters student at ICL Business School in Auckland, New Zealand, specializing in modern business practices and global leadership. 
+            Experienced Administrative Officer with strong skills in operational management and multicultural team collaboration. 
+            Passionate about digital transformation, ethical leadership, and organizational behavior.
+          </p>
+         
+          <div class="d-flex justify-content-center gap-3">
+            <button class="c-btn h-btn mt-3 py-3 px-4 rounded-pill">
+              <a href="#contact" style="text-decoration: none; color: white;">Contact Me</a>
+            </button>
+            <button class="c-btn h-btn mt-3 py-3 px-4 rounded-pill" >
+              <a href="#portfolio" style="text-decoration: none; color: white;">My Projects</a>
+            </button>
+            <button class="c-btn h-btn mt-3 py-3 px-4 rounded-pill" >
+    <a href="./images/newzres.png" target="" style="text-decoration: none; color: white;">View Resume</a>
+  </button>
+          </div>
+
+        </div>
+        <div class="col-10 col-md-6 d-md-block mt-4 mt-md-0">
+         <img src="./images/WhatsApp Image 2025-06-27 at 18.32.39_a0bc29bc.jpg" class="img-fluid rounded-circle" alt="Sachin Thakur" style="max-height: 500px; object-fit: cover;" />
+        </div>
+      </div>
+    </section>
+    <!-- home section ends here -->
+
+    <!-- expertise section starts -->
+    <section class="expertise mt-5 py-5" id="service" style="background-color: #eefcf6;">
+      <div class="container">
+        <div class="heading text-center">
+          <small>My Expertise</small>
+          <h3>
+            Professional Skills and <br />
+            Competencies
+          </h3>
+        </div>
+
+        <div class="row justify-content-evenly mt-5">
+          <div class="col-10 col-md-4 mb-4" data-aos="fade-up">
+            <div class="service-card">
+              <div class="img">
+                <img
+                  src="https://cdn-icons-png.flaticon.com/512/2906/2906274.png"
+                  class="w-25 img-fluid img"
+                  alt="Leadership"
+                />
+              </div>
+              <div class="content mt-3">
+                <h4>Leadership & Management</h4>
+                <p class="text-muted">
+                  Proven leadership potential with inclusive leadership philosophy. Skilled in team coordination, conflict resolution, and strategic planning. Experienced in applying management theories like Kotter's 8-Step Change Model in practical scenarios.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4 col-10 mb-4" data-aos="fade-up" data-aos-delay="100">
+            <div class="service-card">
+              <div class="img">
+                <img
+                  src="https://cdn-icons-png.flaticon.com/512/1055/1055687.png"
+                  class="w-25 img-fluid img"
+                  alt="Digital Transformation"
+                />
+              </div>
+              <div class="content mt-3">
+                <h4>Digital Transformation</h4>
+                <p class="text-muted">
+                  Passionate about helping organizations navigate digital transformation. Knowledgeable in data analytics, automation, and cloud technologies. Focused on implementing technologies that enhance productivity and customer engagement.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4 col-10 mb-4" data-aos="fade-up" data-aos-delay="200">
+            <div class="service-card">
+              <div class="img">
+                <img
+                  src="https://cdn-icons-png.flaticon.com/512/3062/3062633.png"
+                  class="w-25 img-fluid img"
+                  alt="Cross-Cultural"
+                />
+              </div>
+              <div class="content mt-3">
+                <h4>Cross-Cultural Communication</h4>
+                <p class="text-muted">
+                  Strong interpersonal skills with ability to work effectively in multicultural environments. Experienced in applying Hofstede's Cultural Dimensions Theory to improve team collaboration. High cultural intelligence (CQ) and adaptability.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4 col-10 mb-4" data-aos="fade-up">
+            <div class="service-card">
+              <div class="img">
+                <img
+                  src="https://cdn-icons-png.flaticon.com/512/2721/2721287.png"
+                  class="w-25 img-fluid img"
+                  alt="Business Strategy"
+                />
+              </div>
+              <div class="content mt-3">
+                <h4>Business Strategy</h4>
+                <p class="text-muted">
+                  Skilled in developing strategic models for business efficiency and sustainability. Focused on helping SMEs modernize business models through digitalization and ethical leadership. Strong analytical and problem-solving skills.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4 col-10 mb-4" data-aos="fade-up" data-aos-delay="100">
+            <div class="service-card">
+              <div class="img">
+                <img
+                  src="https://cdn-icons-png.flaticon.com/512/942/942799.png"
+                  class="w-25 img-fluid img"
+                  alt="Sustainability"
+                />
+              </div>
+              <div class="content mt-3">
+                <h4>Sustainability & Ethics</h4>
+                <p class="text-muted">
+                  Advocate for Triple Bottom Line (People, Planet, Profit) approach. Experienced in analyzing corporate social responsibility and environmental sustainability. Committed to ethical business practices and sustainable growth strategies.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4 col-10 mb-4" data-aos="fade-up" data-aos-delay="200">
+            <div class="service-card">
+              <div class="img">
+                <img
+                  src="https://cdn-icons-png.flaticon.com/512/2933/2933245.png"
+                  class="w-25 img-fluid img"
+                  alt="Operations"
+                />
+              </div>
+              <div class="content mt-3">
+                <h4>Operations Management</h4>
+                <p class="text-muted">
+                  Experienced in operational management from hospitality administration role. Skilled in process optimization, staff coordination, and organizational systems. Goal-oriented with strong organizational and time management skills.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- expertise section ends here -->
+
+    <!-- skill section starts -->
+    <section class="skill mt-5 py-5" id="about" style="background-color: rgb(236, 248, 213);">
+      <div class="container">
+        <div class="row justify-content-evenly align-items-center">
+          <div class="col-10 col-md-5 skill-with-progress" data-aos="slide-right">
+            <div class="heading">
+              <small>Self-Evaluation</small>
+              <h3>Strengths & Development Areas</h3>
+              <p class="text-muted">
+                Based on Whetten & Cameron Framework of Managerial Skills
+              </p>
+            </div>
+            
+            <div class="mt-4">
+              <h5>Strengths:</h5>
+              <ul class="text-muted">
+                <li><strong>Interpersonal Skills:</strong> Building relationships, empathy, cultural awareness</li>
+                <li><strong>Goal Orientation:</strong> Organized, result-driven, uses digital tools effectively</li>
+                <li><strong>Leadership Potential:</strong> Initiative-taker, inclusive leadership approach</li>
+                <li><strong>Resilience:</strong> Adaptable, solution-oriented in challenging situations</li>
+              </ul>
+            </div>
+            
+            <div class="mt-4">
+              <h5>Development Areas:</h5>
+              <ul class="text-muted">
+                <li><strong>Time Management:</strong> Improving scheduling and prioritization</li>
+                <li><strong>Technical Skills:</strong> Enhancing Power BI, advanced Excel, data visualization</li>
+                <li><strong>Public Speaking:</strong> Developing formal presentation skills</li>
+              </ul>
+            </div>
+          </div>
+          
+          <div class="col-10 col-md-5 skill-detail mt-5 mt-md-0" data-aos="slide-left">
+            <div class="heading">
+              <small>Career Aspirations</small>
+              <h3>Professional Goals</h3>
+            </div>
+            
+            <div class="mt-4">
+              <div class="d-flex align-items-start mb-3">
+                <div class="me-3 mt-1 text-warning">
+                  <i class="bi bi-1-circle-fill fs-4"></i>
+                </div>
+                <div>
+                  <h5>Short-term Goal (6 months)</h5>
+                  <p class="text-muted">
+                    Secure a graduate position in Business Operations or Consulting with focus on strategic planning, operational efficiency or digital transformation projects.
+                  </p>
+                </div>
+              </div>
+              
+              <div class="d-flex align-items-start mb-3">
+                <div class="me-3 mt-1 text-warning">
+                  <i class="bi bi-2-circle-fill fs-4"></i>
+                </div>
+                <div>
+                  <h5>Medium-term Goal (2-3 years)</h5>
+                  <p class="text-muted">
+                    Become a Business Strategist or Operations Manager in a digitally progressive organization, helping companies navigate digital transformation.
+                  </p>
+                </div>
+              </div>
+              
+              <div class="d-flex align-items-start">
+                <div class="me-3 mt-1 text-warning">
+                  <i class="bi bi-3-circle-fill fs-4"></i>
+                </div>
+                <div>
+                  <h5>Long-term Goal</h5>
+                  <p class="text-muted">
+                    Establish my own consultancy specializing in helping SMEs modernize through digitalization, ethical leadership and sustainability strategies.
+                  </p>
+                </div>
+              </div>
+            </div>
+            
+            <div class="mt-4">
+              <h5>Learning Goals:</h5>
+              <ul class="text-muted">
+                <li>Enhance time management through SMART goals and planning tools</li>
+                <li>Improve public speaking through Toastmasters</li>
+                <li>Develop technical proficiency in Power BI and advanced Excel</li>
+                <li>Expand LinkedIn network to 500+ industry connections</li>
+                <li>Launch monthly blog on sustainable business trends</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- skill section end here -->
+
+    <!-- portfolio section starts here -->
+    <section class="portfolio py-5" id="portfolio" style="background-color: rgb(255, 240, 240);">
+      <div class="container">
+        <div class="heading text-center">
+          <small>Academic & Professional</small>
+          <h3>Key Projects</h3>
+        </div>
+
+        <div class="row justify-content-evenly mt-5">
+          <div class="col-md-6 col-10 mb-4" data-aos="fade-up">
+            <div class="card h-100">
+              <div class="card-body">
+                <h4 class="card-title">Digital Transformation & Organisational Behaviour Strategy</h4>
+                <h6 class="text-muted mb-3">Case Study of The Warehouse Group (TWG)</h6>
+                
+                <div class="mb-3">
+                  <span class="badge bg-secondary">Research</span>
+                  <span class="badge bg-secondary">Analysis</span>
+                  <span class="badge bg-secondary">Strategy Development</span>
+                </div>
+                
+                <p class="text-muted">
+                  Conducted comprehensive research on TWG's organizational structure, HR practices, and digital initiatives. Analyzed OB issues including high staff turnover, low employee participation, and change resistance. Developed strategic change plan using Kotter's 8-Step Change Model.
+                </p>
+                
+                <h6 class="mt-4">Theoretical Framework:</h6>
+                <ul class="text-muted">
+                  <li>Herzberg's Two-Factor Theory</li>
+                  <li>McGregor's Theory X and Y</li>
+                  <li>Kotter's 8-Step Change Model</li>
+                  <li>Schein's Organisational Culture Model</li>
+                </ul>
+                
+                <h6 class="mt-4">Outcomes:</h6>
+                <ul class="text-muted">
+                  <li>High academic evaluation for structure and practical applicability</li>
+                  <li>Enhanced leadership and team coordination skills</li>
+                  <li>Improved ability to apply OB theories to real challenges</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-md-6 col-10 mb-4" data-aos="fade-up" data-aos-delay="100">
+            <div class="card h-100">
+              <div class="card-body">
+                <h4 class="card-title">Business Ethics Analysis</h4>
+                <h6 class="text-muted mb-3">Triple Bottom Line Approach</h6>
+                
+                <div class="mb-3">
+                  <span class="badge bg-secondary">Ethical Analysis</span>
+                  <span class="badge bg-secondary">Sustainability</span>
+                  <span class="badge bg-secondary">Corporate Responsibility</span>
+                </div>
+                
+                <p class="text-muted">
+                  Analyzed a retail company accused of greenwashing using the Triple Bottom Line (People, Planet, Profit) framework. Evaluated their performance in social responsibility, environmental sustainability and economic transparency. Identified discrepancies between branding and operations.
+                </p>
+                
+                <h6 class="mt-4">Key Learnings:</h6>
+                <ul class="text-muted">
+                  <li>Ethical and sustainable practices create long-term value</li>
+                  <li>Importance of transparency in corporate sustainability claims</li>
+                  <li>Stakeholder engagement in ethical business practices</li>
+                </ul>
+                
+                <h6 class="mt-4">Recommendations:</h6>
+                <ul class="text-muted">
+                  <li>Open sourcing of sustainability data</li>
+                  <li>Stakeholder consultation processes</li>
+                  <li>Alignment of operations with branding claims</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-md-6 col-10 mb-4" data-aos="fade-up">
+            <div class="card h-100">
+              <div class="card-body">
+                <h4 class="card-title">Cross-Cultural Management</h4>
+                <h6 class="text-muted mb-3">Hofstede's Cultural Dimensions Application</h6>
+                
+                <div class="mb-3">
+                  <span class="badge bg-secondary">Cultural Analysis</span>
+                  <span class="badge bg-secondary">Team Dynamics</span>
+                  <span class="badge bg-secondary">Communication</span>
+                </div>
+                
+                <p class="text-muted">
+                  Applied Hofstede's Cultural Dimensions Theory to resolve tensions in a multicultural project team. Addressed differences in communication styles and decision-making approaches stemming from cultural backgrounds. Developed strategies for inclusive collaboration.
+                </p>
+                
+                <h6 class="mt-4">Key Dimensions Applied:</h6>
+                <ul class="text-muted">
+                  <li>Power Distance</li>
+                  <li>Individualism vs Collectivism</li>
+                  <li>Uncertainty Avoidance</li>
+                </ul>
+                
+                <h6 class="mt-4">Outcomes:</h6>
+                <ul class="text-muted">
+                  <li>Improved team cohesion and productivity</li>
+                  <li>Enhanced cultural intelligence (CQ)</li>
+                  <li>Modified communication approaches respecting cultural sensitivities</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-md-6 col-10 mb-4" data-aos="fade-up" data-aos-delay="100">
+            <div class="card h-100">
+              <div class="card-body">
+                <h4 class="card-title">Digital Readiness Analysis</h4>
+                <h6 class="text-muted mb-3">Post-COVID Business Adaptability</h6>
+                
+                <div class="mb-3">
+                  <span class="badge bg-secondary">Digital Transformation</span>
+                  <span class="badge bg-secondary">Business Strategy</span>
+                  <span class="badge bg-secondary">Technology Adoption</span>
+                </div>
+                
+                <p class="text-muted">
+                  Researched how COVID-19 accelerated digital transformation across industries. Analyzed adoption of remote work tools, online customer engagement platforms, and digital operational systems. Explored case studies of companies that successfully adapted versus those that struggled.
+                </p>
+                
+                <h6 class="mt-4">Key Technologies Studied:</h6>
+                <ul class="text-muted">
+                  <li>Customer Relationship Management (CRM) systems</li>
+                  <li>Automation tools</li>
+                  <li>Cloud-based collaboration platforms</li>
+                </ul>
+                
+                <h6 class="mt-4">Professional Development:</h6>
+                <ul class="text-muted">
+                  <li>Completed basic CRM course</li>
+                  <li>Regularly tracking digital trends via Harvard Business Review, TechCrunch</li>
+                  <li>Developing skills in Power BI, Tableau, and digital marketing platforms</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- portfolio section ends here -->
+
+    <!-- testimonial section starts  -->
+    <section class="testimonial mt-5 pt-5 pb-5" id="testimonial" style="background-color: rgb(250, 223, 244);">
+      <div class="container">
+        <div class="row justify-content-evenly align-items-center">
+          <div class="col-md-5 col-10" data-aos="slide-right">
+            <img src="https://images.unsplash.com/photo-1521791055366-0d553872125f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1469&q=80" class="img-fluid rounded" alt="Team Collaboration" />
+          </div>
+          <div class="col-md-6 col-10 mt-5 mt-md-0" data-aos="slide-left">
+            <div class="heading">
+              <small>Professional Attributes</small>
+              <h3>Key Competencies</h3>
+              <!-- here we will use carousel element from bootstrap -->
+              <div
+                id="carouselExampleControls"
+                class="carousel slide mt-4"
+                data-bs-ride="carousel"
+              >
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <div class="row justify-content-evenly">
+                      <div class="col-2 text-center">
+                        <i class="bi bi-people-fill fs-1 text-warning"></i>
+                      </div>
+                      <div class="col-10">
+                        <h4>Interpersonal Skills</h4>
+                        <p class="text-muted">
+                          Excellent at building and maintaining working relationships. Strong in empathy, active listening, and cultural awareness. Successfully collaborated with international students from diverse backgrounds at ICL Business School.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <div class="row justify-content-evenly">
+                      <div class="col-2 text-center">
+                        <i class="bi bi-bullseye fs-1 text-warning"></i>
+                      </div>
+                      <div class="col-10">
+                        <h4>Goal Orientation</h4>
+                        <p class="text-muted">
+                          Highly organized and result-driven. Effectively sets and achieves goals in academic and professional contexts. Uses digital tools like Trello and Google Calendar to track progress and maintain quality.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <div class="row justify-content-evenly">
+                      <div class="col-2 text-center">
+                        <i class="bi bi-lightbulb-fill fs-1 text-warning"></i>
+                      </div>
+                      <div class="col-10">
+                        <h4>Leadership Potential</h4>
+                        <p class="text-muted">
+                          Natural initiator and proactive in academic and professional endeavors. Takes charge in planning activities, distributing roles, and assisting team members to achieve shared objectives. Believes in inclusive leadership.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <div class="row justify-content-evenly">
+                      <div class="col-2 text-center">
+                        <i class="bi bi-heart-fill fs-1 text-warning"></i>
+                      </div>
+                      <div class="col-10">
+                        <h4>Resilience</h4>
+                        <p class="text-muted">
+                          Demonstrated adaptability in challenging situations as a full-time postgraduate student and part-time worker. Views difficulties as learning experiences. Maintains positive, solution-oriented approach during uncertainty.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <button
+                  class="nextprev-btn rounded-pill prev-btn"
+                  type="button"
+                  data-bs-target="#carouselExampleControls"
+                  data-bs-slide="prev"
+                >
+                  <i class="bi bi-arrow-left-circle-fill prev"></i>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button
+                  class="nextprev-btn rounded-pill next-btn"
+                  type="button"
+                  data-bs-target="#carouselExampleControls"
+                  data-bs-slide="next"
+                >
+                  <i class="bi bi-arrow-right-circle-fill next"></i>
+                  <span class="visually-hidden">Next</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- testimonial ends here -->
+
+  
+
+    <!-- blog section starts -->
+    <section class="blog mt-5 pb-5" id="blog">
+      <div class="container">
+        <div class="heading text-center pt-5">
+          <small>Learning Reflections</small>
+          <h3>Key Academic Insights</h3>
+        </div>
+        <div class="row justify-content-evenly px-4 mt-4">
+          <div class="blogpost col-md-4 col-10 mt-2 mt-md-0" data-aos="fade-up">
+            <div class="card h-100">
+              <img
+                src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                class="card-img-top"
+                alt="Change Management"
+                style="height: 200px; object-fit: cover;"
+              />
+              <div class="card-body text-center">
+                <h4 class="card-title">Kotter's 8-Step Change Model</h4>
+                <span class="badge bg-secondary mb-2">Organizational Behavior</span><br />
+                <p class="text-muted mt-3">
+                  Learned to implement effective organizational change through systematic steps from creating urgency to anchoring changes in culture.
+                </p>
+                <a href="#" class="link" data-bs-toggle="modal" data-bs-target="#reflectionModal1">Read Reflection</a>
+              </div>
+            </div>
+          </div>
+          <div class="blogpost col-md-4 col-10 mt-5 mt-md-0" data-aos="fade-up" data-aos-delay="100">
+            <div class="card h-100">
+              <img
+                src="https://images.unsplash.com/photo-1434626881859-194d67b2b86f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1474&q=80"
+                class="card-img-top"
+                alt="Cross-Cultural"
+                style="height: 200px; object-fit: cover;"
+              />
+              <div class="card-body text-center">
+                <h4 class="card-title">Hofstede's Cultural Dimensions</h4>
+                <span class="badge bg-secondary mb-2">Cross-Cultural Management</span><br />
+                <p class="text-muted mt-3">
+                  Understood how national culture influences workplace behavior and learned to navigate multicultural team dynamics effectively.
+                </p>
+                <a href="#" class="link" data-bs-toggle="modal" data-bs-target="#reflectionModal2">Read Reflection</a>
+              </div>
+            </div>
+          </div>
+          <div class="blogpost col-md-4 col-10 mt-5 mt-md-0" data-aos="fade-up" data-aos-delay="200">
+            <div class="card h-100">
+               <img src="https://resources.sandiego.edu/hubfs/AdobeStock_635177082.jpeg"  alt="Sachin Thakur" />
+
+                <!-- bootstrap css cdn link  -->
+                               
+              <div class="card-body text-center">
+                <h4 class="card-title">Triple Bottom Line</h4>
+                <span class="badge bg-secondary mb-2">Business Ethics</span><br />
+                <p class="text-muted mt-3">
+                  Recognized that corporate success should measure social and environmental impact alongside financial performance.
+                </p>
+                <a href="#" class="link" data-bs-toggle="modal" data-bs-target="#reflectionModal3">Read Reflection</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Reflection Modals -->
+      <div class="modal fade" id="reflectionModal1" tabindex="-1" aria-labelledby="reflectionModal1Label" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="reflectionModal1Label">Organisational Behaviour and Leadership: Kotter's 8-Step Change Model</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <p>In the module of Organisational Behaviour, the concept of Kotter 8-Step Change Model was one of the most enlightening frameworks I worked on. The framework provides a step-by-step guide to execute effective organisational change, which begins by generating the sense of urgency and concludes with cultural entrenchment of the new practices.</p>
+              <p>The point that caught my attention was that early buy-in and the importance of maintaining and supporting momentum is critical through having a clear vision and short-term wins.</p>
+              <p>I used this model in our group assignment on The Warehouse Group (TWG) where we examined the problem of staff disengagement and high turnover. The Kotter framework assisted us in creating a balanced and realistic change plan based on addressing leadership gaps and cultural resistance. For example, we stressed the importance of developing a guiding coalition among middle level managers and implementing visible wins like employee recognition schemes.</p>
+              <p>Through this experience, I learned how resistance to change can stem from limitations in communication and lack of engagement, not just individual reluctance. Following this systematic procedure helped me understand how to anticipate such problems and create interventions to address them proactively. This model will prove beneficial in future leadership roles, particularly in digital transformation scenarios where resistance often accompanies rapid adjustment periods.</p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal fade" id="reflectionModal2" tabindex="-1" aria-labelledby="reflectionModal2Label" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="reflectionModal2Label">Cross-Cultural Management: Hofstede's Cultural Dimensions Theory</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <p>I gained important knowledge about the role national culture plays in determining workplace behaviour during our module on cross-cultural management when we studied Hofstede's Cultural Dimensions, which included power distance, individualism vs collectivism, and uncertainty avoidance.</p>
+              <p>I now understand that assumptions, values, and communication methods can vary significantly across cultures and that these differences can either benefit or complicate team collaboration.</p>
+              <p>This learning was especially useful in a cross-cultural project team when a misunderstanding arose between culturally diverse team members resulting in tension. Some teammates preferred a direct approach and swift decision-making while others valued consensus and hierarchical approval. Through research considering Hofstede's dimensions, I understood these discrepancies were cultural rather than personal. Based on this insight, we modified our communication approach—encouraging open dialogue while respecting all members' cultural sensitivities.</p>
+              <p>This reflection also stressed the value of cultural intelligence (CQ) in today's diverse work climate. It reminded me that inclusive leadership isn't about treating everyone equally, but about appreciating and capitalizing on our cultural differences to build more cohesive and productive teams. I plan to continue developing this ability, particularly as I anticipate working in international business strategy or consulting roles.</p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal fade" id="reflectionModal3" tabindex="-1" aria-labelledby="reflectionModal3Label" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="reflectionModal3Label">Business Ethics and Sustainability: Triple Bottom Line (People, Planet, Profit)</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <p>The introduction of the Triple Bottom Line (TBL) concept during business ethics classes significantly impacted my vision of corporate success. This model emphasizes that companies should evaluate performance not just by profit, but also by their treatment of people and the planet.</p>
+              <p>This challenged my previous belief that profitability and ethics were mutually exclusive, as I learned that ethical and sustainable practices can create long-term value.</p>
+              <p>I applied this framework in analyzing a retail company accused of greenwashing—exaggerating their environmental friendliness claims. Using the TBL model, we assessed their performance in social responsibility, environmental sustainability, and economic transparency. This revealed discrepancies between their branding and actual operations, allowing us to recommend ethical improvements like transparent reporting and stakeholder consultation.</p>
+              <p>This reflection strengthened my commitment to incorporating sustainability into future business strategies. Considering my operational experience and potential future consultancy, I want to advance business models that are not only profitable but socially responsible. Ethics and sustainability are no longer optional—they're essential for building consumer trust, employee loyalty, and regulatory compliance.</p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- blog section ends here -->
+
+    <!-- contact section starts -->
+    <section class="contact mt-5 py-5" id="contact" style="background-color: #eefcf6;">
+      <div class="container">
+        <div class="heading text-center">
+          <small>Get In Touch</small>
+          <h3>Contact Information</h3>
+        </div>
+        <div class="row justify-content-evenly mt-5">
+          <div class="col-md-5 col-10 mb-4" data-aos="fade-up">
+            <div class="card h-100">
+              <div class="card-body p-4">
+                <h4 class="card-title">Contact Details</h4>
+                <div class="d-flex align-items-start mt-4">
+                  <div class="me-3 mt-1 text-warning">
+                    <i class="bi bi-envelope-fill fs-4"></i>
+                  </div>
+                  <div>
+                    <h6>Email</h6>
+                    <p class="text-muted">2402sachin@gmail.com</p>
+                  </div>
+                </div>
+                <div class="d-flex align-items-start mt-4">
+                  <div class="me-3 mt-1 text-warning">
+                    <i class="bi bi-telephone-fill fs-4"></i>
+                  </div>
+                  <div>
+                    <h6>Phone</h6>
+                    <p class="text-muted">+64 272614064</p>
+                  </div>
+                </div>
+                <div class="d-flex align-items-start mt-4">
+                  <div class="me-3 mt-1 text-warning">
+                    <i class="bi bi-linkedin fs-4"></i>
+                  </div>
+                  <div>
+                    <h6>LinkedIn</h6>
+                    <p class="text-muted">
+                      <a href="http://www.linkedin.com/in/sachin-thakur-543700371" target="_blank" class="link">linkedin.com/in/sachin-thakur</a>
+                    </p>
+                  </div>
+                </div>
+                <div class="mt-5">
+                  <h5>Professional Summary</h5>
+                  <p class="text-muted">
+                    Masters student at ICL Business School specializing in modern business practices and global leadership. Experienced in operational management with strong skills in multicultural team collaboration. Passionate about digital transformation, ethical leadership, and helping organizations navigate change.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-10 mb-4" data-aos="fade-up" data-aos-delay="100">
+            <div class="card h-100">
+              <div class="card-body p-4">
+                <h4 class="card-title">Send a Message</h4>
+                <form class="mt-4">
+                  <div class="mb-3">
+                    <label for="name" class="form-label">Name</label>
+                    <input type="text" class="form-control" id="name" placeholder="Your Name">
+                  </div>
+                  <div class="mb-3">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="email" placeholder="Your Email">
+                  </div>
+                  <div class="mb-3">
+                    <label for="subject" class="form-label">Subject</label>
+                    <input type="text" class="form-control" id="subject" placeholder="Subject">
+                  </div>
+                  <div class="mb-3">
+                    <label for="message" class="form-label">Message</label>
+                    <textarea class="form-control" id="message" rows="4" placeholder="Your Message"></textarea>
+                  </div>
+                  <button type="submit" class="c-btn py-2 px-4 rounded-pill">Send Message</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- contact section ends here -->
+
+    <!-- footer section starts -->
+    <footer class="pt-5 pb-3">
+      <div class="container">
+        <div class="row justify-content-evenly align-items-center">
+          <div class="col-md-6 col-10 text-white">
+            <h3>SACHIN THAKUR</h3>
+            <p class="text-white-50">Masters Student | Business Strategist | Digital Transformation Enthusiast</p>
+          </div>
+          <div class="col-md-6 col-10 mt-4 mt-md-0">
+            <div class="d-flex justify-content-md-end justify-content-center gap-3">
+              <a href="www.linkedin.com/in/sachin-thakur-543700371" target="_blank" class="text-white fs-4"><i class="bi bi-linkedin"></i></a>
+              <a href="#" class="text-white fs-4"><i class="bi bi-twitter"></i></a>
+              <a href="#" class="text-white fs-4"><i class="bi bi-facebook"></i></a>
+              <a href="#" class="text-white fs-4"><i class="bi bi-instagram"></i></a>
+            </div>
+          </div>
+        </div>
+        <hr class="text-white-50 mt-4">
+        <div class="row">
+          <div class="col-12 text-center text-white-50">
+            <p>© 2023 Sachin Thakur. All Rights Reserved.</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- footer section ends here -->
+
+    <!-- back to top button -->
+    <button
+      type="button"
+      class="btn btn-floating btn-lg rounded-circle"
+      id="btn-back-to-top"
+    >
+      <i class="bi bi-arrow-up"></i>
+    </button>
+
+    <!-- bootstrap js cdn link  -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- AOS js cdn link  -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        offset: 100,
+        duration: 1000,
+      });
+    </script>
+
+    <!-- custom js file  -->
+    <script src="./script.js"></script>
+    <script>
+      // Back to top button
+      let mybutton = document.getElementById("btn-back-to-top");
+
+      // When the user scrolls down 20px from the top of the document, show the button
+      window.onscroll = function () {
+        scrollFunction();
+      };
+
+      function scrollFunction() {
+        if (
+          document.body.scrollTop > 20 ||
+          document.documentElement.scrollTop > 20
+        ) {
+          mybutton.style.display = "block";
+        } else {
+          mybutton.style.display = "none";
+        }
+      }
+      // When the user clicks on the button, scroll to the top of the document
+      mybutton.addEventListener("click", backToTop);
+
+      function backToTop() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+      }
+
+      // Smooth scrolling for navigation links
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+          
+          document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+          });
+        });
+      });
+
+      // Close navbar when clicking a nav link in mobile view
+      document.querySelectorAll('.nav-link').forEach(link => {
+        link.addEventListener('click', () => {
+          const navbarCollapse = document.querySelector('.navbar-collapse');
+          if (navbarCollapse.classList.contains('show')) {
+            const bsCollapse = new bootstrap.Collapse(navbarCollapse);
+            bsCollapse.hide();
+          }
+        });
+      });
+
+      // Prevent horizontal scrolling on touch devices
+      document.addEventListener('touchmove', function(e) {
+        if (e.touches.length === 1) {
+          const touch = e.touches[0];
+          const x = touch.clientX;
+          const y = touch.clientY;
+          const element = document.elementFromPoint(x, y);
+          
+          // Allow horizontal scrolling only for specific elements (like carousels)
+          if (!element || !element.closest('.carousel')) {
+            e.preventDefault();
+          }
+        }
+      }, { passive: false });
+</script>
+  </body>
+</html>
