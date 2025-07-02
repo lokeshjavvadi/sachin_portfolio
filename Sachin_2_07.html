@@ -1152,19 +1152,7 @@
       });
 
       // Prevent horizontal scrolling on touch devices
-      document.addEventListener('touchmove', function(e) {
-        if (e.touches.length === 1) {
-          const touch = e.touches[0];
-          const x = touch.clientX;
-          const y = touch.clientY;
-          const element = document.elementFromPoint(x, y);
-          
-          // Allow horizontal scrolling only for specific elements (like carousels)
-          if (!element || !element.closest('.carousel')) {
-            e.preventDefault();
-          }
-        }
-      }, { passive: false });
+
 </script>
   </body>
 </html>
