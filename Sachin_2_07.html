@@ -293,6 +293,21 @@
           padding-left: 15px;
         }
       }
+
+      @media (max-width: 768px) {
+    .ratio.ratio-16x9 {
+      max-width: 100% !important;
+      border-width: 2px !important;
+    }
+    
+    h5 {
+      font-size: 1.25rem !important;
+    }
+  }
+
+
+
+      
     </style>
   </head>
   <body>
@@ -378,6 +393,38 @@
       </div>
     </section>
     <!-- home section ends here -->
+
+
+     <div class="mt-4 mb-4" data-aos="fade-up" style="
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     justify-content: center;
+     padding:7%;
+">
+  <h5 class="text-center mb-3" style="
+      color: #3f396d;
+      font-weight: 600;
+      font-size: 1.5rem;
+  ">My Introduction Video</h5>
+  <div class="ratio ratio-16x9" style="
+      width: 100%;
+      max-width: 50%;
+      border: 3px solid #ff5d00;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  ">
+    <video controls poster="./images/sachin_img.jpg" class="rounded" style="
+        object-fit: cover;
+        background-color: #f8f9fa;
+    ">
+      <source src="./images/sachin_intro.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </div>
+</div>
+
 
     <!-- expertise section starts -->
     <section class="expertise mt-5 py-5" id="service" style="background-color: #eefcf6;">
